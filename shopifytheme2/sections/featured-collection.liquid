@@ -90,6 +90,19 @@
           {%- endif %}
         </div>
       {%- endif -%}
+      {%- if section.settings.show_kc_filters and section.settings.filter_labels != blank -%}
+        {%- assign kc_filters = section.settings.filter_labels | split: ',' -%}
+        <div class="kc-filter-pills">
+          {%- for filter in kc_filters -%}
+            {%- assign filter_label = filter | strip -%}
+            {%- if filter_label != '' -%}
+              <button class="kc-pill kc-pill--ghost{% if forloop.first %} is-active{% endif %}" type="button" aria-label="{{ filter_label }}">
+                {{ filter_label }}
+              </button>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
     </div>
 
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -285,6 +298,18 @@
       "id": "show_description",
       "label": "t:sections.featured-collection.settings.show_description.label",
       "default": false   
+    },
+    {
+      "type": "checkbox",
+      "id": "show_kc_filters",
+      "label": "Show filter pills (visual)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "filter_labels",
+      "label": "Filter pills (comma separated)",
+      "default": "All, Tees, Accessories, Bags, Favorites"
     },
     {
       "type": "select",
