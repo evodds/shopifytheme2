@@ -1,5 +1,25 @@
 {
   "sections": {
+    "hero-main": {
+      "type": "hero-main",
+      "settings": {
+        "eyebrow": "New & Kawaii",
+        "heading": "Brighten your desk with joyful finds",
+        "heading_size": "h1",
+        "subheading": "Curated plushies, stationery, and handmade gifts from indie makers. Made to sprinkle delight into every day.",
+        "primary_label": "Shop new arrivals",
+        "primary_link": "/collections/all",
+        "secondary_label": "View bestsellers",
+        "secondary_link": "/collections",
+        "image": "",
+        "sticker_image": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "scheme-1",
+        "padding_top": 84,
+        "padding_bottom": 76
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -84,6 +104,7 @@
     }
   },
   "order": [
+    "hero-main",
     "rich_text",
     "collage-0",
     "featured-collection"
